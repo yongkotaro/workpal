@@ -16,3 +16,5 @@ Follow the commands below to nstall the relevant packages and start the server:
 npm install
 npm start
 ```
+
+Run the SQL script `sample.sql` to create the database.
