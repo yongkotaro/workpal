@@ -37,7 +37,7 @@ class Student {
             'SELECT * FROM students WHERE email = ?',
             [email]
         );
-        return rows[0] ? new Student(rows[0].email) : null;
+        return rows[0] ? new Student(rows[0].email, rows[0].suspend_tag) : null;
     }
 }
 

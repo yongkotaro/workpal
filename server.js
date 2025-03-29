@@ -2,6 +2,7 @@ import express from 'express';
 import registerRoutes from "./routes/register-route.js";
 import commonStudentsRoutes from "./routes/commonstudents-route.js";
 import suspendRoutes from "./routes/suspend-route.js";
+import notificationRoutes from "./routes/notification-route.js";
 
 const app = express();
 
@@ -16,6 +17,9 @@ app.use("/api/commonstudents", commonStudentsRoutes);
 
 // route to suspend a student
 app.use("/api/suspend", suspendRoutes);
+
+// route to retrieve a list of students who can receive a given notification
+app.use("/api/retrievefornotifications", notificationRoutes)
 
 // health check
 app.get("/", (_, res) => {
