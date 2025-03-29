@@ -23,7 +23,7 @@ export const getCommonStudents = async (req, res) => {
 
         const missingIndex = teachers.findIndex(t => !t);
         if (missingIndex !== -1) {
-            return res.status(400).json({
+            return res.status(404).json({
                 message: `Teacher ${teacherEmails[missingIndex]} not found`
             });
         }
