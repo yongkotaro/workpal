@@ -33,8 +33,6 @@ export const getCommonStudents = async (req, res) => {
             teachers.map(teacher => teacher.getStudents())
         );
 
-        console.log("Student Lists:", studentLists);
-
         // Find intersection of common students
         const commonStudents = studentLists.reduce((a, b) =>
             a.filter(studentA => b.some(studentB => studentB.student_email === studentA.student_email))

@@ -1,6 +1,7 @@
 import express from 'express';
 import registerRoutes from "./routes/register-route.js";
 import commonStudentsRoutes from "./routes/commonstudents-route.js";
+import suspendRoutes from "./routes/suspend-route.js";
 
 const app = express();
 
@@ -13,6 +14,8 @@ app.use("/api/register", registerRoutes);
 // route to retrieve a list of students common to a given list of teachers 
 app.use("/api/commonstudents", commonStudentsRoutes);
 
+// route to suspend a student
+app.use("/api/suspend", suspendRoutes);
 
 // health check
 app.get("/", (_, res) => {
