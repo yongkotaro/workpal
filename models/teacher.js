@@ -12,6 +12,7 @@ class Teacher {
         );
     }
 
+    // Check if a teacher exists in the database
     static async findByEmail(email) {
         const [rows] = await pool.query(
             'SELECT * FROM teachers WHERE email = ?',
@@ -20,7 +21,8 @@ class Teacher {
         return rows[0] ? new Teacher(rows[0].email) : null;
     }
 
-    async findStudents() {
+    // Get students for a specific teacher
+    async getStudents() {
         const [students] = await pool.query(
             `SELECT student_email FROM classes WHERE teacher_email=?`,
             [this.email]
