@@ -4,16 +4,16 @@ export const getCommonStudents = async (req, res) => {
     try {
         let teacherEmails = req.query.teacher;
 
-        // Convert to array if single teacher provided
-        if (!Array.isArray(teacherEmails)) {
-            teacherEmails = [teacherEmails];
-        }
-
         // Validate request 
         if (!teacherEmails) {
             return res.status(400).json({
                 message: 'Invalid request format'
             });
+        }
+
+        // Convert to array if single teacher provided
+        if (!Array.isArray(teacherEmails)) {
+            teacherEmails = [teacherEmails];
         }
 
         // Check all teachers exist 
