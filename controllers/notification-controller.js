@@ -42,7 +42,6 @@ export const retrieveStudents = async (req, res) => {
         res.status(200).json({ students: eligibleStudents });
 
     } catch (error) {
-        console.error("Error in notification controller:", error);
         res.status(500).json({ error: "Internal server error" });
     }
 };

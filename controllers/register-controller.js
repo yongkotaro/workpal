@@ -14,7 +14,7 @@ export const register = async (req, res) => {
         // Check if teacher exists
         const teacherInstance = await Teacher.findByEmail(teacher);
         if (!teacherInstance) {
-            return res.status(400).json({
+            return res.status(404).json({
                 message: `Teacher with  ${teacher} does not exist'`
             });
         }
@@ -26,7 +26,7 @@ export const register = async (req, res) => {
 
         const missingStudentIndex = studentCheck.findIndex(s => !s);
         if (missingStudentIndex !== -1) {
-            return res.status(400).json({
+            return res.status(404).json({
                 message: `Student ${students[missingStudentIndex]} not found`
             });
         }
@@ -56,7 +56,6 @@ export const register = async (req, res) => {
         res.status(204).send();
 
     } catch (error) {
-        console.log("Error in register controller", error.message);
         res.status(500).json({ error: "Internal Server Error" });
     }
 };
