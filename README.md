@@ -17,4 +17,4 @@ npm install
 npm start
 ```
 
-Run the SQL script `sample.sql` to create the database.
+Run the SQL script `sample.sql` to create or clear the database.
