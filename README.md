@@ -10,7 +10,7 @@ DB_NAME=
 DB_PASSWORD=
 ```
 
-Follow the commands below to nstall the relevant packages and start the server:
+Follow the commands below to install the relevant packages and start the server:
 
 ```
 npm install
